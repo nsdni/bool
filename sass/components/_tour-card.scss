@@ -1,0 +1,136 @@
+.card-tour {
+    position: relative;
+    height: 50rem;
+    perspective: 150rem;
+    border-radius: 0.5rem;
+
+    &__side {
+        height: 50rem;
+        transition: all 1s ease-out;
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+
+        &_front {
+            background: $color-white;
+            box-shadow: $shadow;
+        }
+        &_back {
+            background: linear-gradient(
+                120deg,
+                $color-brown-light,
+                $color-brown-dark
+            );
+            transform: rotateY(180deg);
+            box-shadow: $shadow;
+        }
+    }
+
+    &:hover &__side_front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side_back {
+        transform: rotateY(0deg);
+    }
+
+    &__img {
+        background-blend-mode: hard-light;
+        height: 21rem;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+
+        &_1 {
+            background: $color-brown-light url(../img/tour-photo-1.jpg)
+                center/cover no-repeat;
+        }
+
+        &_2 {
+            background: $color-brown-light url(../img/tour-photo-2.jpg)
+                center/cover no-repeat;
+        }
+
+        &_3 {
+            background: $color-brown-light url(../img/tour-photo-3.jpg)
+                center/cover no-repeat;
+        }
+    }
+
+    &__title {
+        font-size: 2.8rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        text-align: right;
+        position: absolute;
+        top: 17rem;
+        right: 0;
+    }
+
+    &__span {
+        background: linear-gradient(
+            90.05deg,
+            $color-brown-light,
+            $color-brown-dark
+        );
+        padding: 1rem 2rem 0.3rem 2rem;
+
+        &_2 {
+            position: absolute;
+            top: 3.4rem;
+            right: 0;
+            padding-top: 0;
+            padding-bottom: 1rem;
+
+            @include respone(tab-land) {
+                top: 3.2rem;
+            }
+        }
+    }
+
+    &__desc {
+        ul {
+            list-style: none;
+            margin: 0 auto;
+            width: 75%;
+            li {
+                font-size: $font-size-paragraph;
+                color: $color-grey;
+                letter-spacing: 0.2rem;
+                text-decoration-line: underline;
+                text-underline-offset: 0.2rem;
+                text-align: center;
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+
+    &__backSide-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__text {
+        margin-bottom: 9rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        letter-spacing: 0.2rem;
+        &_1 {
+            font-size: $font-size-paragraph;
+            font-weight: 300;
+        }
+
+        &_2 {
+            font-size: 6rem;
+            font-weight: 500;
+        }
+    }
+}

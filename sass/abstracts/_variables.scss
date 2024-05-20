@@ -1,0 +1,21 @@
+//! ПЕРЕМЕННЫЕ
+
+//? Цвета
+$color-grey: #777777;
+$color-brown-light: #ba8554;
+$color-brown-dark: #a14f03;
+$color-white: #fff;
+$color-black: #000;
+
+//? Тени
+$shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.3);
+$shadow-h2: 0 .4rem .4rem rgba($color-black, .25);
+
+//? Переменные для сетки
+$margin-vertical-big: 8rem;
+$grid-width: 114rem;
+$gutter-horizontal: 6rem;
+
+$font-size-paragraph: 1.6rem;
+$font-size-h2: 3.6rem;
+$font-size-h3: 2rem;

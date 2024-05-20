@@ -1,0 +1,28 @@
+.adventure-card {
+    padding: 2.5rem;
+    background-color: rgba($color-white, 0.8);
+    border-radius: 0.5rem;
+    box-shadow: $shadow;
+    text-align: center;
+    transition: all 0.5s;
+
+    @include respone(tab-land) {
+        padding: 4rem;
+    }
+
+    &__icon {
+        display: inline-block;
+        font-size: 6rem;
+        background: linear-gradient(
+            90.05deg,
+            rgba($color-brown-light, 0.7) 0.03%,
+            rgba($color-brown-dark, 0.7) 99.94%
+        );
+        color: transparent;
+        background-clip: text;
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.1);
+    }
+}

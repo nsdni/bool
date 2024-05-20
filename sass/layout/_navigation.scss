@@ -1,0 +1,186 @@
+.navigation {
+    &__toogle {
+        display: none;
+    }
+
+    &__button {
+        background: $color-white;
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 10rem;
+        right: 10rem;
+        z-index: 200000;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: $shadow;
+
+        @include respone(tab-land){
+            height: 7.5rem;
+            width: 7.5rem;
+            top: 8.5rem;
+            right: 8.5rem;
+        }
+
+        @include respone(tab-port){
+            height: 5.5rem;
+            width: 5.5rem;
+            top: 6.5rem;
+            right: 7.5rem;
+        }
+    }
+
+    &__bg {
+        position: fixed;
+        right: 11rem;
+        top: 11rem;
+        width: 6rem;
+        z-index: 10000;
+        height: 6rem;
+        border-radius: 50%;
+        background: radial-gradient($color-brown-light, $color-brown-dark);
+        transition: all .7s  ease-out;
+
+        @include respone(tab-land){
+            height: 5.5rem;
+            width: 5.5rem;
+            top: 9rem;
+            right: 9rem;
+        }
+
+        @include respone(tab-port){
+            height: 4.5rem;
+            width: 4.5rem;
+            top: 7rem;
+            right: 8rem;
+        }
+    }
+
+    &__nav {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 150000;
+        transition: all .5s cubic-bezier(.77,.16,.2,.89);
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+    }
+
+    &__item {
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__link {
+        &:visited,
+        &:link {
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 4rem;
+            line-height: 4.8rem;
+            letter-spacing: 0.5rem;
+            color: $color-white;
+            text-transform: uppercase;
+            background: linear-gradient(
+                120deg,
+                transparent 0%,
+                transparent 50%,
+                $color-white 50%
+            );
+            background-size: 250%;
+            padding: 1rem 2rem;
+            transition: all 0.5s;
+            display: inline-block;
+
+            @include respone(tab-port){
+                font-size: 3.6rem;
+            }
+        }
+
+        &:active,
+        &:hover {
+            background-position: 100%;
+            color: $color-brown-dark;
+            transform: translateX(1rem);
+        }
+    }
+
+    &__toogle:checked ~ &__bg {
+        transform: scale(150);
+    }
+
+    &__toogle:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+        height: 100vh;
+    }
+
+    &__icon{
+
+        position: relative;
+        margin-top: 3.9rem;
+
+        @include respone(tab-port){
+            margin-top: 2.7rem;
+        }
+
+        &, &::before, &::after{
+            width: 3rem;
+            height: .2rem;
+            background: #000;
+            display: inline-block;
+        }
+
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .3s;
+        }
+
+        &::before{
+            top: -.7rem;
+        }
+
+        &::after{
+            top: .7rem;
+        }
+    }
+
+    &__button:hover &__icon::before{
+        top: -.9rem;
+
+    }
+
+    &__button:hover &__icon::after{
+        top: .9rem;
+
+    }
+
+    &__toogle:checked + &__button &__icon{
+        background: transparent;
+    }
+
+    &__toogle:checked + &__button &__icon::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__toogle:checked + &__button &__icon::after{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+}

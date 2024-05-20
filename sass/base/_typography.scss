@@ -1,0 +1,107 @@
+//! ТИПОГРАФИКА
+
+//? Общая типографика
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: $color-grey;
+    font-size: $font-size-paragraph;
+    letter-spacing: 0.2rem;
+}
+
+//? Стили гланвого заголовка
+.title-first {
+    color: #fff;
+
+    &__main {
+        text-transform: uppercase;
+        display: block;
+        font-weight: 800;
+        font-size: 5rem;
+        line-height: 6rem;
+        letter-spacing: 1rem;
+        margin-bottom: 1rem;
+        animation-name: lefttoright;
+        animation-duration: 1.5s;
+        animation-delay: 0.5s;
+        backface-visibility: hidden;
+        animation-fill-mode: backwards;
+
+        @include respone(tab-port) {
+            font-size: 4rem;
+        }
+    }
+
+    &__secondary {
+        display: block;
+        font-weight: 100;
+        font-size: 4rem;
+        line-height: 4rem;
+        letter-spacing: 0.5rem;
+        animation-name: RightToLeft;
+        animation-duration: 1.5s;
+        animation-delay: 0.5s;
+        backface-visibility: hidden;
+        margin-bottom: 6.5rem;
+        animation-fill-mode: backwards;
+
+        @include respone(tab-port) {
+            font-size: 3rem;
+        }
+    }
+}
+
+.title-secondery {
+    text-transform: uppercase;
+    font-size: $font-size-h2;
+    letter-spacing: 1rem;
+    font-weight: 800;
+    display: inline-block;
+    margin: 0 auto;
+    background: linear-gradient(
+        90.05deg,
+        rgba($color-brown-light, 0.7) 0.03%,
+        rgba($color-brown-dark, 0.7) 99.94%
+    );
+    background-clip: text;
+    color: transparent;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+
+    @include respone(tab-port) {
+        font-size: 3rem;
+    }
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: $shadow-h2;
+    }
+
+    &_white {
+        color: $color-white;
+    }
+}
+
+.title-third {
+    font-size: $font-size-h3;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include respone(tab-land) {
+        font-size: 1.9rem;
+    }
+
+    @include respone(tab-port) {
+        font-size: 1.5rem;
+    }
+
+    
+}
+
+.paragraph {
+    font-style: $font-size-paragraph;
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+    line-height: 140%;
+}

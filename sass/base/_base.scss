@@ -1,0 +1,51 @@
+//! БАЗА
+
+*::selection {
+    background: $color-brown-light;
+    color: $color-white;
+}
+
+//? Размер шрифта для адаптива
+html {
+    font-size: 62.5%;
+
+    &::-webkit-scrollbar {
+        opacity: 0.2;
+        width: 15px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        opacity: 0.4;
+        border-radius: 10rem;
+        background: $color-brown-light;
+    }
+
+    @include respone(tab-land){
+        font-size: 56.25%;
+    }
+
+    @include respone(tab-port){
+        font-size: 50%;
+    }
+
+    @include respone(phone){
+        font-size: 30%;
+    }
+
+    @include respone(big-screen){
+        font-size: 75%;
+    }
+}
+
+//? Стили для боди
+body {
+    background-color: $color-white;
+    padding: 5rem;
+}
+
+//? Стили для основного контейнера
+.conteiner {
+    position: relative;
+    z-index: 0;
+    background-color: #f7f7f7;
+}

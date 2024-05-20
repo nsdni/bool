@@ -1,0 +1,49 @@
+//! МИКСИНЫ
+
+//? Миксин для стилизации ссылок
+@mixin style-link($color) {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color;
+}
+
+//? Миксин КлеарФикса
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+@mixin respone($breakpoint){
+    @if $breakpoint == phone {
+        @media (max-width: 600px) {
+            @content
+        }
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 900px) {
+            @content
+        }
+    }
+
+    @if $breakpoint == tab-land {
+        @media (max-width: 1240px) {
+            @content
+        }
+    }
+
+    @if $breakpoint == big-screen {
+        @media (min-width: 1800px) {
+            @content
+        }
+    }
+}
+
+
+
+

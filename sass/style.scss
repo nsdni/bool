@@ -1,0 +1,89 @@
+//* Файлы удаляющие основные стили (начало)
+
+//? Нормализуем стили
+@import "resets/normalizes";
+
+//? Сбрасываем стили
+@import "resets/resets";
+
+//* Файлы удаляющие основные стили (конец)
+
+//* Дата-файлы (начало)
+
+//? Переменные
+@import "abstracts/variables";
+
+//? Миксины
+@import "abstracts/mixsins";
+
+//? Функции
+@import "abstracts/function";
+
+//*Дата-файлы (конец)
+
+//* Базовые настройки (начало)
+
+//? Базовые настройки
+@import "base/base";
+
+//? Анимации
+@import "base/animation";
+
+//? Типографика
+@import "base/typography";
+
+//? Утилиты
+@import "base/utilities";
+
+//* Базовые настройки (конец)
+
+//* Компоненты (начало)
+
+//? Кнопка
+@import "components/button";
+
+//? Текстовая кнопка
+@import "components/button-text";
+
+//? Композиция фотографий
+@import "components/composition";
+
+//? Какрточки приключений
+@import "components/adventure-card";
+
+//? Какрточки туров
+@import "components/tour-card";
+
+//? Какрточки отзывов
+@import "components/feedBack-card";
+
+//? Видео-фон
+@import "components/bg-video";
+
+//? Форма
+@import "components/form";
+
+//* Компоненты (конец)
+
+//* Лэйауты (начало)
+
+//? Хедер
+@import "layout/header";
+
+//? Сетка
+@import "layout/grid";
+
+//? Футер
+@import "layout/footer";
+
+//? Навигация
+@import "layout/navigation";
+
+//* Лэйауты (конец)
+
+//* Страницы (начало)
+
+//? Начальная страница
+@import "pages/home";
+
+//* Страницы (конец)
